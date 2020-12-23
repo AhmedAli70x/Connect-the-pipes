@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Pipe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="images/11.png">
+    
+    <!-- My sytles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Navbar content -->
+                <a class="navbar-brand" href="#"><i class="fas fa-home" style="font-size:30px"></i> <span style="font-family: Montserrat;
+                    font-size: 30px;">Level <span id="level-number">1</span></span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                    <ul id="right-nav" class="navbar-nav ml-lg-auto">                    
+                    <li class="nav-item mr-1 mb-1">
+                        <button type="button" class="btn btn-outline-primary text-light btn-block" data-toggle="modal" data-target="#login-form">
+                            <i class="fas fa-user"></i> Login
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-primary text-light  btn-block" data-toggle="modal" data-target="#register-form">
+                            <i class="fas fa-user-plus"></i> Register
+                        </button>
+                    </li>
+                   
+                    </ul>
+                </div>
+              </nav>           
+       
+            <!-- Login Modal -->
+            <div class="modal fade text-dark" id="login-form" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- login form -->
+                            <form method="POST" >
+                                <div class="form-group">
+                                    <label for="login-user-email">Email address</label>
+                                    <input type="email" class="form-control" name="login-email"
+                                        id="login-email">                                        
+                                </div>
+                                <div class="form-group">
+                                    <label for="login-password">Password</label>
+                                    <input autocomplete="on" type="password" class="form-control" name="login-password"
+                                        id="login-password">
+                                        <span class="error"></span>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="rememberme" class="form-check-input" id="remember-me">
+                                    <label class="form-check-label" for="remember-me">Remember me</label>
+                                </div>
+                                <button name="submit" id="btn-login" class="btn btn-primary btn-block">Login</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Register Form -->
+            <div class="modal fade text-dark" id="register-form" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- register form -->
+                            <form>
+                                <div class="form-group">
+                                    <label for="user-name">Name</label>
+                                    <input type="email" class="form-control" name="register-name" id="register-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-email">Email address</label>
+                                    <input name="register-email" type="email" class="form-control" id="register-email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="register-password">Password</label>
+                                    <input autocomplete="on" type="password" class="form-control" name="register-password
+                                    register-password" id="register-password">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label  for="confirm-password">Password Confirm</label>
+                                    <input autocomplete="on" type="password" class="form-control" name="confirm-password"
+                                        id="confirm-password">
+                                        <span class="error"></span>
+                                </div>
+                                <button type="submit" id="btn-register" class="btn btn-primary btn-block">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+      
+    </div>
+    <div class="continaer" style="margin-top:50px">
+        <audio id= "myaudio">
+            <source src="sounds/click.mp3">
+        </audio>
+        <audio id="mywin">
+            <source src="sounds/win.mp3">
+        </audio>
+        <div id="game-area">
+
+        </div>
+        
+    </div>
+    <div class="container footer bg-dark text-light">
+        <p class="lead text-center mb-0 mt-5 p-3"> copy right &copy; 2020 Team 4 | <span class="text-danger">ITI</span> | supervised by Eng.Mrihan and Eng.Sara </p>
+    </div>
+
+
+    <!-- Modals -->
+    <div class="modal fade" id="start-up-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    
+                    <!-- <button data-dismiss="modal" class="btn btn-info btn-block">Restart</button> -->
+                    <button data-dismiss="modal" class="btn btn-info btn-block">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="winner" data-backdrop="static" data-keyboard="false" tabindex="-1" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <img src="images/level-winner.gif" class="mb-2" width="300" height="300" alt="level winner image">
+                    <button data-dismiss="modal" id="btn-next-level" class="btn btn-info btn-block">Next Level</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="end-levels" data-backdrop="static" data-keyboard="false" tabindex="-1" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <img src="images/endlevels.gif" width="300" height="300" alt="levels completed imager">
+                    <p class="text-center mt-1 text-primary">Levels are run out. waiting for more</p>
+                    <button data-dismiss="modal" id="btn-next-level" class="btn btn-info btn-block">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <script src="js/levels.js"></script> -->
+    <script src="js/validation.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

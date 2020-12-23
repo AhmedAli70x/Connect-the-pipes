@@ -1,0 +1,7 @@
+class validate
+{
+    email(id)
+    {
+        
+    }
+}
